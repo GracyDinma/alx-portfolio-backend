@@ -34,9 +34,23 @@ def insert_question_to_db(question_id, question, answer, category):
 
 
 @app.route('/')
+def base():
+    return render_template('base.html')
+
+
+@app.route('/home')
 def home():
     return render_template('index.html')
 
+
+@app.route('/login')
+def login():
+    return render_template('login.html')
+
+
+@app.route('/register')
+def register():
+    return render_template('register.html')
 
 
 @app.route('/ask', methods=['POST'])
