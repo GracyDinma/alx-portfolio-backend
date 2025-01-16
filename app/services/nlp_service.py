@@ -50,5 +50,5 @@ def predict_question(quest):
     index_of_similarity_question = similarite(query, corpus_question)
 
     # Return ID question and her reponse corresponding
-    question_data = document_data[index_of_similarity_question]  # I review this after
+    question_data = document_data[index_of_similarity_question]  
     return question_data['idQuestion'], question_data['answer'], predicted_label
