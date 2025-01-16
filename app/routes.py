@@ -4,6 +4,9 @@ from flask import render_template
 from flask_cors import CORS
 from transformers import BertForSequenceClassification, BertTokenizer
 import torch
+from sklearn.feature_extraction.text import TfidfVectorizer
+from sklearn.metrics.pairwise import cosine_similarity
+import numpy as np
 from services.nlp_service import predict_question
 from pymongo import MongoClient
 from datetime import datetime
