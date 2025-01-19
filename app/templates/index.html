@@ -8,17 +8,39 @@
 </head>
 <body>
     <header>
-        <h1>Welcome to SmartConnect!</h1>
-        <nav>
-            <a href="/login">Login</a>
-            <a href="/register">Register</a>
-        </nav>
+        <h1></h1>
+        
     </header>
     <main>
-        <h2>About SmartConnect</h2>
-        <p>Connect and get personalized responses through a custom-built API</p>
+        <div class="container">
+            <div class="sidebar">
+                <a href="about.html">What's SmartConnect</a>
+                <a href="https://github.com/GracyDinma/alx-portfolio-backend/tree/master">GitHub Repository</a>
+                <a href="mailto:georgesmbo89@gmail.com?cc=sainajonathan@gmail.com,okohagchidinma@gmail.com,asharmngohol@gmail.com
+                ">Contact us</a>
+            </div>
+            <div class="main-content">
+                <div class="faqs">
+                    <h2>FAQs</h2>
+                    <div class="faq-item">
+                        <strong>"How long does shipping take?"</strong>
+                        <p class="answer">Standard shipping takes 5-7 business days, while expedited shipping takes 2-3 business days.</p>
+                    </div>
+                    <div class="faq-item">
+                        <strong>"Can I change my shipping address after placing an order?"</strong>
+                        <p class="answer">Shipping addresses can be changed before the order has been dispatched. Contact customer service for assistance.</p>
+                    </div>
+                    <div class="faq-item">
+                        <strong>"What countries do you ship to?"</strong>
+                        <p class="answer">We ship to more than 50 countries. You can view the full list on our website.</p>
+                    </div>
+                </div>
+                <div class="api-description">
+                    <h2></h2>
+                    <p>Smart Connect API is a conversational FAQ system. Unlike traditional static FAQs, it interacts with users to answer their queries in real-time. The system consists of backend components like the API, NLP engine, and database to process and manage queries.</p>
+                </div>
         <div id="chatbox">
-            <div id ="messages"></div>
+            <h3>Ask your question below</h3>
             <textarea id="messageInput" placeholder="Type your message..."></textarea>
             <button id="sendButton">Send</button>
         </div>
@@ -27,5 +49,6 @@
         <p>&copy; 2025 SmartConnect App</p>
     </footer>
     <script src="../static/js/chatbot.js"></script>
+    <script src="../static/js/script.js"></script>
 </body>
 </html>

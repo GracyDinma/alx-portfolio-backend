@@ -2,6 +2,7 @@ import json
 from flask import Flask, request, jsonify
 from flask import render_template
 from flask_cors import CORS
+import requests
 from transformers import BertForSequenceClassification, BertTokenizer
 import torch
 from sklearn.feature_extraction.text import TfidfVectorizer
@@ -55,6 +56,19 @@ def login():
 def register():
     return render_template('register.html')
 
+
+@app.route('/check_nlp_connection', methods=['GET'])
+def check_nlp_connection():
+    try:
+        # Simulating a connection check to the NLP engine
+        response = requests.get('http://your-nlp-engine-url/status')  # Adjust the URL for your NLP engine status check
+        if response.status_code == 200:
+            return jsonify({"status": "connected"}), 200
+        else:
+            return jsonify({"status": "disconnected"}), 503
+    except Exception as e:
+        return jsonify({"status": "disconnected", "error": str(e)}), 503
+        
 
 @app.route('/ask', methods=['POST'])
 def ask():
