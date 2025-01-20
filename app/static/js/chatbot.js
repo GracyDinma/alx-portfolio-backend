@@ -1,5 +1,6 @@
 document.getElementById('sendButton').addEventListener('click', function() {
-    const question = document.getElementById('messageInput').value;
+    const messageInput = document.getElementById('messageInput');
+    const question = messageInput.value;
     const button = document.getElementById('sendButton');
     
     // Validation: Check if the messageInput is empty
@@ -29,6 +30,7 @@ document.getElementById('sendButton').addEventListener('click', function() {
             const messagesDiv = document.getElementById('messages');
             messagesDiv.innerHTML += `<p><strong>You:</strong> ${data.question}</p>`;
             messagesDiv.innerHTML += `<p><strong>Bot:</strong> ${data.answer}</p>`;
+	    messageInput.value = '';
         })
         .catch(error => console.error('Error:', error))
         .finally(() => {
@@ -52,6 +54,3 @@ function checkNLPConnection() {
             return false;  // Return false if the connection fails
         });
 }
-
-
-

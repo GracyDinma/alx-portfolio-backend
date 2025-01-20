@@ -37,9 +37,14 @@ def insert_question_to_db(question_id, question, answer, category):
     collection.insert_one(question_data)
 
 
+#@app.route('/')
+#def base():
+#    return render_template('base.html')
+
+
 @app.route('/')
-def base():
-    return render_template('base.html')
+def about():
+    return render_template('about.html')
 
 
 @app.route('/home')
@@ -61,7 +66,7 @@ def register():
 def check_nlp_connection():
     try:
         # Simulating a connection check to the NLP engine
-        response = requests.get('http://your-nlp-engine-url/status')  # Adjust the URL for your NLP engine status check
+        response = requests.get('http://127.0.1:8000')  # Adjust the URL for your NLP engine status check http://your-nlp-engine-url/status
         if response.status_code == 200:
             return jsonify({"status": "connected"}), 200
         else:
