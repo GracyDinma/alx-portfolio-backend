@@ -26,8 +26,8 @@ Before you begin, ensure you have the following installed:
 
 1. **Clone the repository**:
    ```bash
-   git clone https://github.com/sainawj/smartconnect.git
-   cd smartconnect
+   git clone https://github.com/GracyDinma/alx-portfolio-backend.git
+   cd alx-portfolio-backend
 2. **Set up a virtual environment**
     ```bash
     python3 -m venv venv
