@@ -14,7 +14,7 @@ from datetime import datetime
 
 
 
-# Connexion à MongoDB
+# Connect to local mongodb server
 client = MongoClient('mongodb://localhost:27017/')
 db = client['chatbot_db']
 collection = db['faq_questions']
