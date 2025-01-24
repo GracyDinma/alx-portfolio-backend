@@ -12,8 +12,12 @@ tokenizer = BertTokenizer.from_pretrained('../data/file_nlp')
 
 
 # Load the JSON file 
-with open('../data/dataset/faq_dataset.json', 'r') as file:
-    data = json.load(file)
+def loadJsonFile():
+    with open('../data/dataset/faq_dataset.json', 'r') as file:
+        return json.load(file)
+
+# Call loadJsonFile function to loading JSON file
+data = loadJsonFile()
 
 
 # Similarity function
