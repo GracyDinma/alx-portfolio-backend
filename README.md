@@ -9,8 +9,8 @@ SmartConnect is an AI-powered chatbot designed to handle business FAQs dynamical
 - AI-powered intent recognition and response generation.
 - RESTful API for smooth interaction with the frontend.
 - MongoDB for efficient data storage and retrieval.
-- User authentication and session management.
 
+ [read more on the documentation](https://docs.google.com/document/d/1ikLInK_oUlSFGLW0aa5A6KSZncqqfJe1EzR2aomcG7E/edit?usp=sharing)
 ---
 
 ## **Prerequisites**
@@ -19,7 +19,7 @@ Before you begin, ensure you have the following installed:
 - **pip**: Python package manager
 - **MongoDB**: Local or cloud setup
 - **Git**: Version control system
-
+- **Requirement file**: requirement.txt
 ---
 
 ## **Installation**
@@ -33,22 +33,18 @@ Before you begin, ensure you have the following installed:
     python3 -m venv venv
     source venv/bin/activate   # On Linux/Mac
     venv\Scripts\activate      # On Windows
-4. **Install dependencies**
+3. **Install dependencies**
      ```bash
      pip install -r requirements.txt
-6. **Set up environment variables**
-     Create a .env file in the root directory and add the following
-     ```bash
-     FLASK_ENV=development
-     JWT_SECRET_KEY=your_secret_key
-     MONGO_URI=mongodb://localhost:27017/smartconnect
+4. **Connections**
+    gunicorn--workers=4--threads=2 routes:app
      
-8. **Run the application**
+5. **Run the application**
     ```bash
     python run.py
-9. **Access the app**
+6. **Access the app**
 Open your browser and visit
   ```bash
-   http://127.0.0.1:5000
+   http://127.0.0.1:8000
   
 
