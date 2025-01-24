@@ -25,7 +25,7 @@ collection = db['faq_questions']
 app = Flask(__name__)
 #CORS(app)
 
-# Fonction pour insérer dans la base de données
+# Function that inserts new question into database
 def insert_question_to_db(question_id, question, answer, category):
     question_data = {
             "id": question_id,
@@ -34,6 +34,7 @@ def insert_question_to_db(question_id, question, answer, category):
         "category": category,
         "date": datetime.now()
     } 
+    # Inserts data into faq_questions collection
     collection.insert_one(question_data)
 
 
