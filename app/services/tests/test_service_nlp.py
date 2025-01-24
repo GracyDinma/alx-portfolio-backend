@@ -8,7 +8,7 @@ class TestNLPService(unittest.TestCase):
     """Class of tests for the NLP Service"""
 
     def setUp(self):
-        # Vérifiez si les fichiers nécessaires existent
+        # Checking file
         self.dataset_path = '../data/dataset/faq_dataset.json'
         self.model_path = '../data/file_nlp'
         if not os.path.exists(self.dataset_path):
@@ -16,7 +16,7 @@ class TestNLPService(unittest.TestCase):
         if not os.path.exists(self.model_path):
             self.fail(f"Model files not found: {self.model_path}")
         
-        # Charger les données pour les tests
+        # Loading data for test
         self.data = loadJsonFile()
         self.user_question = "How do I return an item?"
         self.response_bot = {
@@ -29,7 +29,7 @@ class TestNLPService(unittest.TestCase):
         pass
 
     def test_NLPService(self):
-        # Tester la fonction predict_question
+        # predict_question function testing
         question_id, answer, _ = predict_question(self.user_question)
         self.assertEqual(question_id, self.response_bot["idQuestion"])
         self.assertEqual(answer, self.response_bot["answer"])
