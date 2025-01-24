@@ -48,6 +48,7 @@ def about():
     return render_template('about.html')
 
 
+# Routes for home and about templates
 @app.route('/home')
 def home():
     return render_template('index.html')
