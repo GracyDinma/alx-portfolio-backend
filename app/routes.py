@@ -64,6 +64,7 @@ def register():
     return render_template('register.html')
 
 
+# Route to check connection to the NLP engine
 @app.route('/check_nlp_connection', methods=['GET'])
 def check_nlp_connection():
     try:
@@ -74,6 +75,7 @@ def check_nlp_connection():
         else:
             return jsonify({"status": "disconnected"}), 503
     except Exception as e:
+        # Handle connection errors and return "disconnected" with error details
         return jsonify({"status": "disconnected", "error": str(e)}), 503
         
 
